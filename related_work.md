@@ -10,3 +10,4 @@ Look below for a template. For a markdown cheatsheet, check [this repo](https://
 | ------------- | ------------- | ----------------- | -------------- |
 | MACA | https://gitlab.com/nanocastro/Repo_maca | Active |  Air quality monitor for PM & gases |
 | Luftdaten | https://luftdaten.info/en/home-e | Active |  Nice visualizations and tutorials |
+| DIY spectophotometer | https://github.com/openscienceschool/di-lambda | Active | A modular colorimeter using LEDs as light source and a photodiode as detector |
