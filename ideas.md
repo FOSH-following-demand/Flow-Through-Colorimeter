@@ -16,7 +16,7 @@ https://de.aliexpress.com/item/Gikfun-12V-DC-Dosing-Pump-Peristaltic-Dosing-Head
 http://tienda.ityt.com.ar/mercadolibre/238-modulo-max6675-termocupla-k-spi-sensor-temperatura-itytarg.html?search_query=temperatura&results=147
 
 ### Temperature control output type?
-how are going to do this? maybe we can take a look here?  https://www.hackster.io/open-bioeconomy-lab/microbial-bioreactor-d7f61b this is another project with @vectorious participation! 
+how are going to do this? maybe we can take a look here?  https://www.hackster.io/open-bioeconomy-lab/microbial-bioreactor-d7f61b this is another project with Alex @vectorious participation! 
 
 ### Software
 - Type of data to be collected, format, time interval, live analysis?
