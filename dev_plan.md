@@ -1,11 +1,10 @@
 # Development plan
 
-Use this file to store your plan for the program. What are you going to do, in which order? 
 
 | Week        | Activities                                | Who                   |
 | ----------- | ----------------------------------------- | --------------------- |
 | 1           | Research on similar projects              | Pablo, Nano           |
-| 2           | Design of first prototype                 | Pablo, Nano, Mario    |
+| 2           | Design of first prototype and compilation of inicial BOM | Pablo, Nano, Mario, Alex|
 | 3           |                      |               |
 | 4           |                      |               |
 | 5           |                      |               |
