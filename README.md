@@ -18,3 +18,24 @@ In activation energy experiments described above, the size of the reactor is qui
 By means of a flow-through colorimeter with a peristaltic pump you can monitor the experiment continuously and automatically. Moreover, as the solution is flowing continuously from the reactor to the colorimeter and back you avoid the problems associated with changing conditions of the experiment.
 Additionally, the flow-through colorimeter will include a temperature probe to measure the temperature of the solution and a PID output to control the heater of the reactor.
 Our plan is to build a flow-through colorimeter with a temperature controller to be used in small chemical reactors. We will base our design in the one of [Alex Kutschera](https://www.hackster.io/alexanderkutschera/flow-through-photometer-0226cb).
+
+
+## Progress
+
+Week 1:
+  - Build the repo
+  - Search for similar proyects
+
+Week 2:
+  - Define the system design
+  
+Week 3:
+  - Buy the materials
+  - Sketch of the reactor (3 possible desings).
+  
+Week 4:
+  - Experimets with the false bottom filter
+  - Waiting for the components we ordered....
+
+Week 5:
+
