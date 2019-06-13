@@ -5,6 +5,7 @@ For this project we are using the following projects as inspirations
 | ------------- | ------------- | ----------------- | -------------- |
 | DIY spectophotometer | https://github.com/openscienceschool/di-lambda | Active | A modular colorimeter using LEDs as light source and a photodiode as detector |
 |Flow-Through Photometer| https://www.hackster.io/alexanderkutschera/flow-through-photometer-0226cb | Active | relatively simple and effective flow through colorimeter |
+|  Peristaltic pump controller | https://gitlab.com/pcremades/peripump | Active | A simple persitaltic pump controller |
 
 Moreover, we made a previous research on colorimeters when we developed [our previous prototype](https://gitlab.com/nanocastro/ColorLabFD?nav_source=navbar) based on IO Rodeo Colorimeter
 
