@@ -1,0 +1,6 @@
+[submodule "software/libraries/Adafruit_TCS34725"]
+	path = software/libraries/Adafruit_TCS34725
+	url = https://github.com/adafruit/Adafruit_TCS34725
+[submodule "software/libraries/MAX6675-library"]
+	path = software/libraries/MAX6675-library
+	url = https://github.com/adafruit/MAX6675-library.git
