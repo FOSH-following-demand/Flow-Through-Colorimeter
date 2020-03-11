@@ -2,9 +2,9 @@
 
 $fn=30;
 // Parametros del cubo de medición
-cube_h=30; 
-cube_w=30;
-cube_l=35;
+cube_h=24; 
+cube_w=24;
+cube_l=25;
 
 // Parámetros TCS34725
 tcspcb_w=0.8*25.4;
@@ -24,12 +24,12 @@ sensor_l=2.4;
 //photo_w=2.2;
 
 // Parametros del tubo
-tube_diam=6.10;
+tube_diam=4.5+0.1;//corregido 0.1
 // Parametros del LED
 led_diam=5;
 led_l=7;
 // Parametro haz de luz
-light_diam=1;
+light_diam=1+0.3;//corregido 0.3
 
 difference(){
 cube([cube_l,cube_w,cube_h],center=true);
@@ -56,5 +56,19 @@ translate([-0.1,0,-0.1])
 rotate([90,0,0]) 
 #cylinder(r=light_diam/2,h=1.5*cube_w,center=true);
 
+//arreglo para imprimir....
+translate([0,cube_w/5,0])
+rotate([30,0,0])
+translate([-cube_w/2-2,-cube_w,-cube_l/2-2])
+rotate([0,90,0])
+cylinder(cube_l+2,cube_l,cube_l,$fn=4);
+
+mirror([0,0,1])
+translate([0,cube_w/5,0])
+rotate([30,0,0])
+translate([-cube_w/2-2,-cube_w,-cube_l/2-2])
+rotate([0,90,0])
+cylinder(cube_l+2,cube_l,cube_l,$fn=4);
 
 }
+
