@@ -1,3 +1,5 @@
+
+
 void serialEvent(){
     while (Serial.available()) {
     // get the new byte:
@@ -15,13 +17,15 @@ void serialEvent(){
 void parseCommand(){
   inputString.trim();
   if( inputString == "CAL" ){
-   Serial.println( "Calibrando" );
-   //calibrate(); 
+   Serial.println( "Calibrando..." );
+   calibrate(); 
   }
   else if( inputString == "READ" ){
-   Serial.println( "Midiendo" ); 
+   Serial.println( "Midiendo..." ); 
+   doMeasure = true;
   }
   else{
    Serial.println("Comando invalido"); 
   }
 }
+

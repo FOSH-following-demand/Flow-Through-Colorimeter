@@ -8,6 +8,7 @@ Notes:
 - Timer 2 is used as clock. This means that PWM on pins 3 and 11
 cannot be used.
 *************************************************************/
+
 /* Sensor de color TCS34725 */
 /* Connect SCL    to analog 5
    Connect SDA    to analog 4
@@ -25,23 +26,24 @@ cannot be used.
 #define thermoCLK 6
 
 /* Control de Bomba */
-#define  pwmBomba  9   //--------------------> Para controlar el sentido hay que usar otro pin mas.
+#define  pwmBomba  9   //--------------------> Need a different pin to control pump direction.
 
-/* Inicializamos sensor de color */
-Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
+/* Initialize color sensor */
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_101MS, TCS34725_GAIN_4X);
+uint16_t r, g, b, c;
+boolean doMeasure = false;
 
-/* Inicializamos termocupla */
+/* Initialize thermocouple */
 MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
 
 String inputString;
 boolean stringComplete = false;
 
-//Tiempo en segundos que pasa entre medicion y medicion
-#define  TIMERseconds  30
-void setTimer();
+//Time between measurements
+#define  TIMERseconds  5
 int count=0;
 boolean flag=false;
-void parseCommand();
+
 
 void setup(){
  Serial.begin(9600);
@@ -57,28 +59,16 @@ void setup(){
  setTimer();
 }
 
-int i = 0;
+
 void loop(){
-  uint16_t r, g, b, c;
-  
-   analogWrite(9, i);
-   //Serial.println(i);
-   delay(50);
-   /*tcs.getRawData(&r, &g, &b, &c);
-   Serial.print("R: "); Serial.print(r, DEC); Serial.print(" ");
-   Serial.print("G: "); Serial.print(g, DEC); Serial.print(" ");
-   Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
-  Serial.print("C: "); Serial.print(c, DEC); Serial.print(" ");
-  Serial.println(" ");
-  
-    Serial.print("**C = "); 
-   Serial.println(thermocouple.readCelsius());*/
    
-   if( flag ){
-     Serial.println(millis());
-     flag = false;  
- }
-     
+  //Should we do a measurement?
+   if( flag & doMeasure){
+     flag = false;
+     measure();
+   }
+   
+   //New command to parse?
    if( stringComplete ){
       Serial.println(inputString);
       parseCommand();
@@ -86,9 +76,6 @@ void loop(){
       stringComplete = false;
    }
    
-   i++;
-   if( i > 255 )
-     i = 0;
 }
 
 //Set Timer 2 to work as clock to set interval between measurements.
@@ -97,7 +84,7 @@ void setTimer(){
   TCCR2A |= 0x2;
   TCCR2B &= !(0x0F); //Clear prescaler settings
   TCCR2B |= 0x7; //Fcpu/1024 -> 16Mhz/1024 = 15625
-  OCR2A = 125;  //Contar 125 pulsos. -> 15625/125 = 125
+  OCR2A = 125;  //Count 125 pulses. -> 15625/125 = 125
   TIMSK2 |= (1 << OCIE2A); // Enable CTC interrupt 
 }
 
@@ -110,3 +97,4 @@ ISR(TIMER2_COMPA_vect){
     flag = true;
   }
 }
+
